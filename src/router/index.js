@@ -5,7 +5,7 @@ import Login from '@/components/Login'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -19,3 +19,8 @@ export default new Router({
     }
   ]
 })
+
+router.afterEach((to, from, next) => {
+  document.title = to.name
+})
+export default router

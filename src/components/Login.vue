@@ -32,19 +32,17 @@
 		},
 		methods: {
 			submitForm(){
+				const that = this;
 				this.$axios.post('/login', this.loginForm)
 				.then(function(response){
-
+					console.log(response)
+					if(response.data == true){
+						that.$router.push('HelloWorld')
+					}
 				})
 				.catch(function(response){
-					console.log(this)
-					console.log(response)
 
 				})
-				if (this.loginForm.userName === 'admin' && this.loginForm.password === 'admin') {
-					console.log('success');
-					this.$router.push('HelloWorld')
-				}
 			},
 			resetForm(){
 
