@@ -12,18 +12,17 @@ import axios from 'axios'
 // components
 import App from './App'
 
-
 Vue.config.productionTip = false
 
 Vue.use(ElementUI)
 
 Vue.prototype.$axios = axios.create({
-	baseURL: '/api'
+    baseURL: '/api'
 })
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  template: '<App/>',
-  components: { App }
+    el: '#app',
+    router,
+    template: '<App/>',
+    components: { App }
 })
