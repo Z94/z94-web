@@ -3,10 +3,10 @@
     <div class="login-title">XXXXXX</div>
     <div class="login-container">
         <el-form :rules="rules" ref="loginForm" label-width="100px">
-            <el-form-item label="用户名" prop="userName">
+            <el-form-item label="用户名">
                 <el-input v-model="loginForm.userName" placeholder="username"></el-input>
             </el-form-item>
-            <el-form-item label="密码" prop="password">
+            <el-form-item label="密码">
                 <el-input type="password" v-model="loginForm.password" placeholder="password"></el-input>
             </el-form-item>
             <el-form-item>

@@ -30,7 +30,4 @@ html,body,#app,.wrapper{
 body{
     font-family:"Helvetica Neue",Helvetica, "microsoft yahei", arial, STHeiTi, sans-serif;
 }
-.header{
-    background-color: #242f42;
-}
 </style>
