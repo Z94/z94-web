@@ -14,7 +14,7 @@ export default {
                     icon: 'el-icon-location',
                     index: '1',
                     title: '导航1',
-                    route: '/HelloWorld'
+                    route: '/tab1'
                 },
                 {
                     icon: 'el-icon-menu',
@@ -28,13 +28,13 @@ export default {
                                     icon: 'el-icon-location',
                                     index: '2-1-1',
                                     title: '2-1-1',
-                                    route: '/Login'
+                                    route: '/login'
                                 },
                                 {
                                     icon: 'el-icon-location',
                                     index: '2-1-2',
                                     title: '2-1-2',
-                                    route: '/Login'
+                                    route: '/login'
                                 }
                             ]
                         },
@@ -45,7 +45,7 @@ export default {
                                     icon: 'el-icon-location',
                                     index: '2-2-1',
                                     title: '2-2-1',
-                                    route: '/Home'
+                                    route: '/home'
                                 },
                                 {
                                     icon: 'el-icon-location',
@@ -80,8 +80,8 @@ export default {
 <style>
     .el-menu-left {
         display: block;
-        position: absolute;
-        width: 250px;
+        position: relative;
+        width: 15%;
         left: 0;
         margin-left: 0;
         height: 100%;

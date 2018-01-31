@@ -56,7 +56,7 @@
 </script>
 <style>
     .login-wrap {
-        position: relative;
+        position: absolute;
         width: 100%;
         height: 100%;
         background: #324157;
@@ -66,7 +66,7 @@
         top: 50%;
         text-align: center;
         width: 100%;
-        margin-top: -230px;
+        margin-top: -200px;
         font-size: 30px;
         color: #fff
     }
@@ -76,7 +76,7 @@
         top:50%;
         width:300px;
         height:160px;
-        margin:-150px 0 0 -190px;
+        transform: translate(-50%,-50%);
         padding:40px 60px 40px 10px;
         border-radius: 5px;
         background: #fff;
