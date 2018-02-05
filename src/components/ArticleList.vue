@@ -1,14 +1,14 @@
 <template>
     <div>
         <h2 style="color: black; text-align: center">articles</h2>
-        <div class="card" v-for="(o) in 5" :key="o" @click.native="cardClick">
+        <div class="article-list" v-for="article in articleList" :key="article.id" @click="articleClick(article.id)">
             <div style="padding: 20px">
-                <h1>title</h1>
+                <h1>{{article.title}}</h1>
                 <img src="../assets/logo.png" class="image">
                 <div class="card-bottom">
                     <span>好吃的汉堡</span>
                     <div class="bottom clearfix">
-                        <time class="time">{{ currentDate }}</time>
+                        <time class="time">{{ article.time }}</time>
                         <el-button type="text" class="button">操作按钮</el-button>
                     </div>
                 </div>
@@ -20,13 +20,31 @@
     export default {
         data () {
             return {
-                currentDate: new Date()
+                articleList: [
+                    {
+                        title: '1',
+                        id: 'a1',
+                        img: '',
+                        time: '1'
+                    },
+                    {
+                        title: '1',
+                        id: 'a2',
+                        img: '',
+                        time: '1'
+                    }
+                ]
+            }
+        },
+        methods: {
+            articleClick (id) {
+                this.$router.push({path: `articleItem/${id}`})
             }
         }
     }
 </script>
 <style>
-    .card {
+    .article-list {
         cursor: pointer;
         margin: 10px auto;
         display: block;

@@ -36,7 +36,12 @@ export default {
                 },
                 {
                     name: 'me',
-                    route: '/login'
+                    route: '/me'
+                }
+            ],
+            links: [
+                {
+
                 }
             ]
         }
@@ -98,6 +103,7 @@ export default {
     li > a {
         text-decoration: none;
         color: #fafafa;
+        cursor: pointer;
     }
 </style>
 

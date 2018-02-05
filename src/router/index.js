@@ -3,7 +3,9 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Login from '@/components/Login'
 import Home from '@/components/Home'
-import Card from '@/components/Card'
+import ArticleList from '@/components/ArticleList'
+import Me from '@/components/Me'
+import ArticleItem from '@/components/ArticleItem'
 
 Vue.use(Router)
 
@@ -11,13 +13,7 @@ const router = new Router({
     routes: [
         {
             path: '/',
-            component: Home,
-            children: [
-                {
-                    path: '/',
-                    component: Card
-                }
-            ]
+            redirect: '/home'
         },
         {
             path: '/login',
@@ -30,25 +26,50 @@ const router = new Router({
             children: [
                 {
                     path: '/',
-                    component: Card
+                    component: HelloWorld
                 },
                 {
-                    path: '/card',
-                    component: Card
+                    path: '/tags',
+                    component: ArticleList
                 },
                 {
                     path: '/articles',
                     name: 'articles',
-                    component: HelloWorld
+                    component: ArticleList
                 },
                 {
                     path: '/me',
                     name: 'me',
-                    component: HelloWorld
+                    component: Me
+                },
+                {
+                    path: '/articleItem/:id',
+                    component: ArticleItem,
+                    props: true,
+                    meta: {
+                        requiresAuth: true
+                    }
                 }
             ]
         }
     ]
+})
+
+router.beforeEach((to, from, next) => {
+    if (to.matched.some(record => record.meta.requiresAuth)) {
+        // this route requires auth, check if logged in
+        // if not, redirect to login page.
+        if (to.params.id === false) {
+            next({
+                path: '/login',
+                query: { redirect: to.fullPath }
+            })
+        } else {
+            next()
+        }
+    } else {
+        next() // 确保一定要调用 next()
+    }
 })
 
 router.afterEach((to, from, next) => {

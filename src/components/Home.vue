@@ -1,23 +1,19 @@
 <template>
-    <div>
-        <main class="container">
-            <z-side-bar v-show="showSideBar"></z-side-bar>
-            <!-- <v-aside></v-aside> -->
-            <div class="content">
-                <button @click="showOrHideSideBar" class="z-but">SideBar</button>
-                <div class="main-container">
-                    <router-view></router-view>
-                </div>
-                <footer class="z-footer">
-                    &copy;6666666666666
-                </footer>
+    <main class="container">
+        <z-side-bar v-show="showSideBar"></z-side-bar>
+        <div class="content">
+            <div @click="showOrHideSideBar" class="show">|||</div>
+            <div class="main-container">
+                <router-view></router-view>
             </div>
-        </main>
-    </div>
+            <div class="page-jump">>>></div>
+            <footer class="z-footer">
+                &copy; 纯天然手工打造
+            </footer>
+        </div>
+    </main>
 </template>
 <script>
-    import vHeader from './HeaderNav.vue'
-    import vAside from './Aside.vue'
     import zSideBar from './SideBar.vue'
     export default {
         data () {
@@ -27,8 +23,6 @@
             }
         },
         components: {
-            vAside,
-            vHeader,
             zSideBar
         },
         methods: {
@@ -55,15 +49,20 @@
         display: flex;
         flex-direction: column;
     }
-    .z-but {
-        width: 100px;
+    .show {
+        width: 50px;
+        height: 50px;
+        color: #ccc;
         flex: none;
         position: absolute;
     }
     .main-container {
-        padding: 20px 100px;
+        padding: 20px 200px;
         border-bottom: 1px solid #ddd;
         flex: auto;
+    }
+    .page-jump {
+        flex: none
     }
     .z-footer {
         text-align: center;
